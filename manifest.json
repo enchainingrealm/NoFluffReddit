@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "NoFluffReddit",
+    "version": "1.0",
+
+    "description": "A Chrome extension to remove unnecessary page elements on the Reddit website.",
+    "icons": {
+        "16": "images/logo16.png",
+        "32": "images/reddit_share_circle_32.png",
+        "48": "images/reddit_share_circle_48.png",
+        "128": "images/reddit_share_circle_128.png"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "*://old.reddit.com/r/UBC/*"
+        ],
+        "js": ["util.js", "oldRedditContentScript.js"],
+        "css": ["before.css"]
+    }, {
+        "matches": [
+            "*://www.reddit.com/*"
+        ],
+        "js": ["newRedditContentScript.js"]
+    }],
+
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}
