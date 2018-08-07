@@ -13,6 +13,8 @@ function collapseRedditorsHelper(redditors) {
         if (expand.classList.contains("visited")) {
             return;   // continue (skip this iteration)
         }
+        expand.classList.add("visited");   // when "load more comments" is
+        // clicked later and the DOM changes, don't re-process previous comments
 
         let parent = expand.parentElement;
 
@@ -23,13 +25,8 @@ function collapseRedditorsHelper(redditors) {
         let author = authors[0];
 
         // note: expand.text does NOT contain a regular dash!
-        if (redditors.has(author.text)) {
-            if (expand.text === "[–]") {
-                expand.click();
-            }
-            expand.classList.add("visited");   // when "load more comments" is
-            // clicked later and the DOM changes, don't re-process previous
-            // comments
+        if (redditors.has(author.text) && expand.text === "[–]") {
+            expand.click();
         }
     });
 }
