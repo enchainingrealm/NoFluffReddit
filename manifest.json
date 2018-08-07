@@ -13,15 +13,20 @@
 
     "content_scripts": [{
         "matches": [
+            "*://www.reddit.com/*"
+        ],
+        "js": ["redirect.js"]
+    }, {
+        "matches": [
             "*://old.reddit.com/r/UBC/*"
         ],
-        "js": ["util.js", "oldRedditContentScript.js"],
+        "js": ["util.js", "removeElements.js"],
         "css": ["before.css"]
     }, {
         "matches": [
-            "*://www.reddit.com/*"
+            "*://old.reddit.com/*"
         ],
-        "js": ["newRedditContentScript.js"]
+        "js": ["collapseRedditors.js"]
     }],
 
     "options_ui": {

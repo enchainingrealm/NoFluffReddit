@@ -39,15 +39,6 @@ function removeSubmits() {
     removeAllByClass("submit");
 }
 
-function collapseBlacklistedRedditors() {
-    chrome.storage.sync.get({
-        redditors: []
-    }, function(items) {
-        let redditors = items.redditors;
-        collapseRedditors(new Set(redditors));
-    });
-}
-
 (function() {
     removeWelcomeToReddit();
     removeAddToDiscussion();
@@ -58,5 +49,4 @@ function collapseBlacklistedRedditors() {
     removeButtons();
     removeArrows();
     removeSubmits();
-    collapseBlacklistedRedditors();
 })();
