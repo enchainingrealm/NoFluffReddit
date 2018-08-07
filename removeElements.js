@@ -27,6 +27,7 @@ function removeButtons() {
     removeAllByClass("report-button");
     removeAllByClass("reply-button");
     removeAllByClass("hide-button");
+    removeOneByClass("subscribe-button");
 }
 
 function removeArrows() {

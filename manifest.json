@@ -18,15 +18,14 @@
         "js": ["redirect.js"]
     }, {
         "matches": [
-            "*://old.reddit.com/r/UBC/*"
-        ],
-        "js": ["util.js", "removeElements.js"],
-        "css": ["before.css"]
-    }, {
-        "matches": [
             "*://old.reddit.com/*"
         ],
-        "js": ["collapseRedditors.js"]
+        "js": [
+            "util.js",
+            "removeElements.js",
+            "collapseRedditors.js"
+        ],
+        "css": ["before.css"]
     }],
 
     "options_ui": {
