@@ -1,3 +1,6 @@
+/**
+ * Automatically clicks all "load more comments" links on this Reddit page.
+ */
 function loadMoreComments() {
     while (true) {
         let loaders = getLoaders();
@@ -11,6 +14,11 @@ function loadMoreComments() {
     }
 }
 
+/**
+ * Get all "load more comments" links on this Reddit page, and return them as
+ * anchor elements.
+ * @returns {!*[]}   the "load more comments" anchor elements on this page
+ */
 function getLoaders() {
     let anchors = document.getElementsByTagName("a");
     anchors = Array.from(anchors);
@@ -30,6 +38,10 @@ function getLoaders() {
     return loaders;
 }
 
+/**
+ * The entry point of the content script.
+ * Automatically clicks all "load more comments" links on this Reddit page.
+ */
 (function() {
     loadMoreComments();
 })();

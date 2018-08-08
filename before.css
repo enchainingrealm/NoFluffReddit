@@ -1,3 +1,9 @@
+/*
+Removes the
+    "You are not a member of this community. Please respect that by not
+     downvoting."
+message at the top of a Reddit page.
+ */
 #siteTable::before {
     display: none !important;
 }

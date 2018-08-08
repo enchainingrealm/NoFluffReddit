@@ -1,3 +1,7 @@
+/**
+ * Automatically collapses all comments made by one of the Redditors stored
+ * under the "redditors" key in Chrome-sync-enabled LocalStorage.
+ */
 function collapseRedditors() {
     chrome.storage.sync.get({
         redditors: []
@@ -7,6 +11,12 @@ function collapseRedditors() {
     });
 }
 
+/**
+ * Automatically collapses all comments made by one of the Redditors in the
+ * given Set of Redditors.
+ * @param {!Set<string>} redditors   the Set of redditors whose comments will be
+ * automatically collapsed
+ */
 function collapseRedditorsHelper(redditors) {
     let expands = document.getElementsByClassName("expand");
     Array.from(expands).forEach(function(expand) {
@@ -31,6 +41,14 @@ function collapseRedditorsHelper(redditors) {
     });
 }
 
+/**
+ * The entry point of the content script.
+ * - Automatically collapses all comments made by one of the Redditors stored
+ *   under the "redditors" key in Chrome-sync-enabled LocalStorage.
+ * - Attaches an event listener to the document so any new comments exposed when
+ *   the user clicks a "load more comments" link will be automatically collapsed
+ *   if the comment is by one of the aforementioned blacklisted Redditors.
+ */
 (function() {
     collapseRedditors();
 
