@@ -15,6 +15,7 @@
         "matches": [
             "*://www.reddit.com/*"
         ],
+        "run_at": "document_start",
         "js": ["redirect.js"]
     }, {
         "matches": [
