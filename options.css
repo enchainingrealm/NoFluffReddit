@@ -3,12 +3,12 @@ hr {
     margin-top: 0;
 }
 
-.left--td {
-    padding-right: 8px;
+section {
+    padding: 16px;
 }
 
-.main--div {
-    padding: 16px;
+.left--td {
+    padding-right: 8px;
 }
 
 .right--td {

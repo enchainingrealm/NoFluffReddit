@@ -94,13 +94,43 @@ function removeSubmits() {
  * correspond to functionality that is only enabled when signed in to Reddit.
  */
 (function() {
-    removeWelcomeToReddit();
-    removeAddToDiscussion();
-    removeReadNext();
-    removeGoldvertisement();
-    removeLogin();
-    removeFooter();
-    removeButtons();
-    removeArrows();
-    removeSubmits();
+    chrome.storage.sync.get(STORED_OPTIONS, removeElements);
 })();
+
+/**
+ * Removes Reddit page elements according to the user's choices stored in
+ * LocalStorage.
+ * @param options   the object from LocalStorage storing the user's choices of
+ * page elements to remove
+ */
+function removeElements(options) {
+    if (options.removeAdvertisements) {
+        removeWelcomeToReddit();
+        removeAddToDiscussion();
+        removeGoldvertisement();
+    }
+
+    if (options.removeReadNext) {
+        removeReadNext();
+    }
+
+    if (options.removeLogin) {
+        removeLogin();
+    }
+
+    if (options.removeFooter) {
+        removeFooter();
+    }
+
+    if (options.removeButtons) {
+        removeButtons();
+    }
+
+    if (options.removeArrows) {
+        removeArrows();
+    }
+
+    if (options.removeSubmits) {
+        removeSubmits();
+    }
+}

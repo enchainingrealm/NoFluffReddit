@@ -23,6 +23,7 @@
         ],
         "js": [
             "util.js",
+            "storage.js",
             "removeElements.js",
             "collapseRedditors.js"
         ],

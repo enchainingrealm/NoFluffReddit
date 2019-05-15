@@ -5,12 +5,65 @@
     <title>NoFluffReddit - Options</title>
 </head>
 <body>
-
 <hr>
-<div class="main--div">
+<form>
 
-    <!-- Form -->
-    <form>
+    <!-- Checkboxes -->
+    <section>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="advertisements--checkbox" disabled>
+            <label class="form-check-label" for="advertisements--checkbox">
+                Remove Reddit advertisements
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="read-next--checkbox">
+            <label class="form-check-label" for="read-next--checkbox">
+                Remove read next box
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="login--checkbox">
+            <label class="form-check-label" for="login--checkbox">
+                Remove login box
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="footer--checkbox">
+            <label class="form-check-label" for="footer--checkbox">
+                Remove footer
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="buttons--checkbox">
+            <label class="form-check-label" for="buttons--checkbox">
+                Remove buttons requiring signin
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="arrows--checkbox">
+            <label class="form-check-label" for="arrows--checkbox">
+                Remove voting arrows
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                   id="submits--checkbox">
+            <label class="form-check-label" for="submits--checkbox">
+                Remove submit new post buttons
+            </label>
+        </div>
+    </section>
+    <hr>
+
+    <!-- Textarea -->
+    <section>
         <div class="form-group">
             <label for="redditors--textarea">
                 Redditors to collapse (separated by line break)
@@ -18,6 +71,11 @@
             <textarea class="form-control" id="redditors--textarea" rows="6"
                       placeholder="Redditors to collapse..."></textarea>
         </div>
+    </section>
+    <hr>
+
+    <!-- Save -->
+    <section>
         <table>
             <tr>
                 <td class="left--td">
@@ -33,9 +91,9 @@
                 </td>
             </tr>
         </table>
-    </form>
+    </section>
 
-</div>
+</form>
 
 <!-- Imports -->
 <link rel="stylesheet" href="lib/normalize.css">
@@ -44,6 +102,7 @@
 <script src="lib/jquery-3.3.1.slim.min.js"></script>
 <script src="lib/popper.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
+<script src="storage.js"></script>
 <script src="options.js"></script>
 
 </body>
